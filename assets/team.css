@@ -43,14 +43,14 @@ body {
 .profiles {
   display: flex;
   justify-content: space-around;
-  margin: 50px 80px;
+  margin: 50px 200px;
 }
 .profile {
   flex-basis: 260px;
 }
 .profile .profile-img {
-  height: 260px;
-  width: 260px;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   filter: grayscale(100%);
   transition: 0.4s;
