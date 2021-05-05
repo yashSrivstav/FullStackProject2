@@ -11,4 +11,4 @@ app.get('/', function (req, res) {
 app.get('/team', (req, res) => {
     res.sendFile(__dirname + '/HTML/team.html')
 })
-app.listen(4500);
+app.listen(4500)
