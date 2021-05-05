@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  },
+  "name": "fullstackproject2",
+  "description": "In this digital era where every skill or talent needs to be outreached to people to gain engagement, there comes a need to provide an open platform to all those writers who want to publish their write- ups and want the world to engage and appreciate their work. This will assist them in boosting their skills and will also help them to connect with new writers. \r # Timeline\r 1. August 7, 2020: Project assigned by our mentor Pankaj Kapoor sir.\r 2. August 10, 2020: Title submission\r 3. August 30,2020: Synopsis Submission\r 4. September 3, 2020: First meeting to discuss implemntation details.\r 5. Septembr 10, 2020: Begun with the implementation like nav bar etc\r 6. September 27, 2020: Completed the home page.\r 7. October 15, 2020: Completed the form and team section.\r 8. October 30,2020: Completed and finalized the whole project.\r 9. November 27, 2020: Started working on report, ppt and video.\r 10. December 7 , 2020 : Submitted the project along with report, video, ppt and report.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashSrivstav/FullStackProject2.git"
+  },
+  "keywords": [
+    "full_stack",
+    "javascript",
+    "mongodb",
+    "express"
+  ],
+  "author": "Yash Mohit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashSrivstav/FullStackProject2/issues"
+  },
+  "homepage": "https://github.com/yashSrivstav/FullStackProject2#readme"
+}
