@@ -84,14 +84,14 @@ p {
   width: 100%;
   top: 0;
   z-index: 3;
-  height: 70px;
+  height: 60px;
   box-shadow: 0 15px 10px -15px #1111112b;
   overflow: hidden;
   transition: height 1s ease-in-out;
 }
 .logo img {
   width: 12%;
-  margin-top: 0.6rem;
+  margin-top: 0.1rem;
 }
 .nav .nav-menu {
   justify-content: space-between;
@@ -127,11 +127,11 @@ p {
 .nav .nav-items {
   display: flex;
   margin: 0;
-  margin-left: -26rem;
+  margin-left: -25rem;
 }
 
 .nav .nav-items .nav-link {
-  padding: 1.6rem 1rem;
+  padding: 1.2rem 1rem;
   font-size: 1.1rem;
   position: relative;
   font-family: var(--Abel);
@@ -141,6 +141,7 @@ p {
 .nav .nav-items .nav-link:hover {
   background: linear-gradient(to top, #f8c291 0%, #e84118);
   font-weight: 600;
+  transition: 1s !important;
 }
 
 .nav .nav-items .nav-link:hover .anchor {
@@ -156,8 +157,8 @@ p {
 }
 
 .nav .social {
-  padding: 1.8rem 0;
-  padding-right: 50px;
+  padding: 1.5rem 0;
+  padding-right: 60px;
 }
 
 .nav .social i {
@@ -727,6 +728,7 @@ footer.footer .move-up span:hover {
   .container1 {
     margin-top: 50px;
   }
+ 
   #blog1 {
     height: 260px;
   }
@@ -807,6 +809,7 @@ footer.footer .move-up span:hover {
 /*  3rd breakpoint 520px  */
 
 @media only screen and (max-width: 520px) {
+  
   .site-content .post-content > .post-image .post-info {
     display: none;
   }
