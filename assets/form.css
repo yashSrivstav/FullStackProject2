@@ -1,4 +1,4 @@
-@import url('../CSS/fonts.css');
+@import url('./fonts.css');
 
 *{
   margin: 0;
@@ -16,7 +16,7 @@ html,body{
 }
 body{
   min-height: 70vh;
-  background: url(../PHOTOS/Form/form.jpg) no-repeat;
+  background: url(./PHOTOS/Form/form.jpg) no-repeat;
   background-size: cover;
   font-family: var(--Lexend);
 }
@@ -120,7 +120,7 @@ body{
 
 @media screen and (max-width: 950px){
 body{
-  background: url(../PHOTOS/Form/formmobile.png) no-repeat;
+  background: url(./PHOTOS/Form/formmobile.png) no-repeat;
   background-size: cover;
 }
   .contact-section{

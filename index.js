@@ -11,4 +11,8 @@ app.get('/', function (req, res) {
 app.get('/team', (req, res) => {
     res.sendFile(__dirname + '/HTML/team.html')
 })
+
+app.get('/submit', (req, res) => {
+    res.sendFile(__dirname + '/HTML/form.html')
+})
 app.listen(4500)
