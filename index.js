@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const alert = require('alert')
 var bodyParser = require('body-parser')
 var encoder = bodyParser.urlencoded();
 const mongoose = require('mongoose')
@@ -13,19 +14,11 @@ mongoose.connect('mongodb://writer:yJiJFRNpyKfZ0PNb@cluster0-shard-00-00.dn4nc.m
         useFindAndModify: false,
     }
 )
-writers.find({}, (err, data) => {
-    if (err) console.log(err)
-    console.log(data)
-})
-// const data = new writer({
-//     _id: new mongoose.Types.ObjectId,
-//     name: "Riya Goel",
-//     email: "riya@gmail.com",
-//     address: "turra"
+// writers.find({}, (err, data) => {
+//     if (err) console.log(err)
+//     console.log(data)
 // })
-// data.save().then((result) => {
-//     console.log("inserted")
-// }).catch((err) => { console.log(error) })
+
 
 app.use('/assets', express.static('assets'));
 
@@ -45,11 +38,21 @@ app.get('/adminlogin', (req, res) => {
 })
 
 app.post('/submit', encoder, function (req, res) {
-
-
-    // const data = new writer({
-
-    // })
+    const data = new writers({
+        _id: new mongoose.Types.ObjectId,
+        name: req.body.name,
+        email: req.body.email,
+        insta_id: req.body.insta,
+        category: req.body.Category,
+        msg: req.body.message,
+    })
+    data.save().then((result) => {
+        console.log("inserted")
+    }).then(() => {
+        alert(`${req.body.Category} Submitted`)
+        res.sendFile(__dirname + "/index.html")
+    })
+        .catch((err) => { console.log(error) })
 })
 
 app.listen(4500)
