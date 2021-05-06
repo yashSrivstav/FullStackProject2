@@ -1,23 +1,50 @@
-getData2();
-async function getData2() {
+var tbody = document.getElementById("dynamic")
+console.log(tbody)
+if (localStorage.getItem('email') != "") {
+    //verify this email is present in the db or not
+    getData2();
+    async function getData2() {
 
-    const response = await fetch('/submitdata');
-    const data = await response.json();
-    // console.log(data)
+        const response = await fetch('/submitdata');
+        const data = await response.json();
+        // console.log(data)
 
-    for (var i = 0; i < data.length; i++) {
-        console.log(data[i].name)
+        for (var i = 0; i < data.length; i++) {
+            console.log(data[i].name)
+            var tr = document.createElement("tr")
+
+            var td1 = document.createElement('td')
+            td1.innerHTML = i + 1
+            tr.appendChild(td1)
+
+            var td2 = document.createElement('td')
+            td2.innerHTML = data[i].msg
+            tr.appendChild(td2)
+
+            var td3 = document.createElement('td')
+            td3.innerHTML = data[i].insta_id
+            tr.appendChild(td3)
+
+            var td4 = document.createElement('td')
+            td4.innerHTML = data[i].category
+            td4.classList.add('done')
+            tr.appendChild(td4)
+
+
+            var td5 = document.createElement('td')
+            td5.innerHTML = data[i].name
+            tr.appendChild(td5)
+
+
+            var td6 = document.createElement('td')
+            td6.innerHTML = data[i].email
+            tr.appendChild(td6)
+
+
+            tbody.appendChild(tr)
+        }
     }
 }
-
-
-
-{/* <tr>
-    <td>1</td>
-    <td id>Everything is either 0 or 1</td>
-    <td>yashsrivstav</td>
-    <td class="done">Quote</td>
-    <td class="done">Yash Srivastava</td>
-    <td>yashsv51@gmail.com</td>
-
-</tr> */}
+function rem() {
+    localStorage.setItem("email", "")
+}
