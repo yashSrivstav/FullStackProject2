@@ -43,14 +43,14 @@ app.get('/submitdata', (req, res) => {
     })
 
 })
-
-app.post('/adminlogin', encoder, function (req, res) {
+//create another route for response and redirect to it to solve the problem
+app.post('/login', encoder, function (req, res) {
     var email = req.body.email
     var pass = req.body.pass
     admins.find({ email: email }, (err, data) => {
         if (data.length === 0) {
             alert("Incorrect email")
-            res.sendFile(__dirname + "/HTML/login.html")
+            res.redirect('adminlogin')
         }
         else {
             if (data[0].pass === pass) {
@@ -59,7 +59,7 @@ app.post('/adminlogin', encoder, function (req, res) {
             }
             else {
                 alert("Wrong Password")
-                res.sendFile(__dirname + "/HTML/login.html")
+                res.redirect('adminlogin')
             }
         }
     })
