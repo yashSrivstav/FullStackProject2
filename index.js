@@ -5,16 +5,20 @@ var bodyParser = require('body-parser')
 var encoder = bodyParser.urlencoded();
 const mongoose = require('mongoose')
 const writers = require('./model')
+const admins = require('./model2')
 
 
-mongoose.connect('mongodb://writer:yJiJFRNpyKfZ0PNb@cluster0-shard-00-00.dn4nc.mongodb.net:27017,cluster0-shard-00-01.dn4nc.mongodb.net:27017,cluster0-shard-00-02.dn4nc.mongodb.net:27017/author?ssl=true&replicaSet=atlas-2x81b7-shard-0&authSource=admin&retryWrites=true&w=majority',
+mongoose.connect('mongodb://writer:pc8m1RoVqO3nz5bU@cluster0-shard-00-00.dn4nc.mongodb.net:27017,cluster0-shard-00-01.dn4nc.mongodb.net:27017,cluster0-shard-00-02.dn4nc.mongodb.net:27017/author?ssl=true&replicaSet=atlas-2x81b7-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
     }
-)
-// writers.find({}, (err, data) => {
+).then(() => { console.log("Connection Suceeded") })
+    .catch((err) => { console.log(err) })
+
+
+// admins.find({}, (err, data) => {
 //     if (err) console.log(err)
 //     console.log(data)
 // })
@@ -31,6 +35,27 @@ app.get('/team', (req, res) => {
 
 app.get('/adminlogin', (req, res) => {
     res.sendFile(__dirname + '/HTML/login.html')
+})
+
+app.post('/adminlogin', encoder, function (req, res) {
+    var email = req.body.email
+    var pass = req.body.pass
+    admins.find({ email: email }, (err, data) => {
+        if (data.length === 0) {
+            alert("Incorrect email")
+            res.sendFile(__dirname + "/HTML/login.html")
+        }
+        else {
+            if (data[0].pass === pass) {
+                console.log("Logged In")
+                res.sendFile(__dirname + "/HTML/response.html")
+            }
+            else {
+                alert("Wrong Password")
+                res.sendFile(__dirname + "/HTML/login.html")
+            }
+        }
+    })
 })
 
 app.get('/submit', (req, res) => {
@@ -54,5 +79,6 @@ app.post('/submit', encoder, function (req, res) {
     })
         .catch((err) => { console.log(error) })
 })
+
 
 app.listen(4500)
