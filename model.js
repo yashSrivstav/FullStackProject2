@@ -4,6 +4,7 @@ let newUserSchema=new mongoose.Schema({
     name:String,
     email:String,
     insta_id:String,
+    category:String,
     msg:String,
 })
 module.exports=mongoose.model('writer',newUserSchema)
