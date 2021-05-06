@@ -37,6 +37,13 @@ app.get('/adminlogin', (req, res) => {
     res.sendFile(__dirname + '/HTML/login.html')
 })
 
+app.get('/submitdata', (req, res) => {
+    writers.find({}, (err, data) => {
+        res.send(data)
+    })
+
+})
+
 app.post('/adminlogin', encoder, function (req, res) {
     var email = req.body.email
     var pass = req.body.pass
