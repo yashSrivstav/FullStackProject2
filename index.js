@@ -3,12 +3,18 @@ const app = express()
 var bodyParser = require('body-parser')
 var encoder = bodyParser.urlencoded();
 const mongoose = require('mongoose')
-//model for submission page
-//login form connect to db
-//db connection
-//images from backend
-//a html page where all the data of submission can be seen
-//post route for submit
+
+mongoose.connect('mongodb+srv://writer:qhObIQBXdZfq4XWc@cluster0.dn4nc.mongodb.net/author?retryWrites=true&w=majority',
+{
+    useNewUrlParser: true,
+     useUnifiedTopology: true,
+     useFindAndModify: false,
+}
+)
+.then(()=>{
+    console.log("connection Successful")
+})
+
 app.use('/assets', express.static('assets'));
 
 app.get('/', function (req, res) {
