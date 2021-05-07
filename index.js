@@ -17,13 +17,6 @@ mongoose.connect('mongodb://writer:pc8m1RoVqO3nz5bU@cluster0-shard-00-00.dn4nc.m
 ).then(() => { console.log("Connection Suceeded") })
     .catch((err) => { console.log(err) })
 
-
-// admins.find({}, (err, data) => {
-//     if (err) console.log(err)
-//     console.log(data)
-// })
-
-
 app.use('/assets', express.static('assets'));
 
 app.get('/', function (req, res) {
