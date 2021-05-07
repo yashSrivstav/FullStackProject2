@@ -14,4 +14,4 @@ In this digital era where every skill or talent needs to be outreached to people
 11. April 27, 2020: Started working on report, ppt and video.
 12. May 10 , 2020 : Submitted the project along with report,synopsis, video, ppt and report.
 
-# HEROKU WORKING WEBSITE LINK :<a href="https://writernextdoor-app.herokuapp.com/" target="_blank">LIVE LINK </a>
+# HEROKU WORKING WEBSITE LINK :<a href="https://writernextdoor-app.herokuapp.com/" target="_blank"> Live Link </a>
