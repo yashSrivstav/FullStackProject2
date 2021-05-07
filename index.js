@@ -43,7 +43,14 @@ app.get('/submitdata', (req, res) => {
     })
 
 })
-//create another route for response and redirect to it to solve the problem
+
+app.get('/adminapi', (req, res) => {
+    admins.find({}, (err, data) => {
+        res.send(data)
+    })
+
+})
+
 app.post('/login', encoder, function (req, res) {
     var email = req.body.email
     var pass = req.body.pass
